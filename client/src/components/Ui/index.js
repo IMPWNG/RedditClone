@@ -5,3 +5,5 @@ export { default as Additionnal } from "./Header/Additionnal";
 export { default as UserAvatar } from "./Header/UserAvatar";
 
 export { default as SubBanner } from "./SubHeader/SubBanner";
+export { default as WritePost } from "./Posts/WritePost";
+export { default as Feed } from "./Posts/Feed";

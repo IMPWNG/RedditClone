@@ -7,15 +7,19 @@ module.exports = {
       colors: {
         reddit_dark: {
           DEFAULT: "#030303",
+          brightest:'#1a1a1a',
           brighter: "#272728 ",
         },
         reddit_border: {
           DEFAULT: "#343536",
         },
-        
+        reddit_text:{
+          DEFAULT: "rgb(215, 218, 220)",
+          darker: "#818384",
+        }
       },
-      backgroudImage: {
-        'reddit-banner': "url('../assets/banner/redditBanner.jpg')",
+      backgroundImage: {
+        "reddit-banner": "url('./assets/banner/redditBanner.jpg')",
       },
     },
   },
