@@ -1,4 +1,6 @@
 export { default as AuthBtn } from "./Header/Auth/AuthBtn";
+export { default as AuthModal } from "./Header/Auth/AuthModal";
+export { default as AuthInput } from "./Header/Auth/AuthInput";
 
 export { default as Search } from "./Header/Search";
 export { default as Notifications } from "./Header/Notifications";

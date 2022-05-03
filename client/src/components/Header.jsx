@@ -21,10 +21,10 @@ export default function Header() {
         <Chat />
         <Additionnal /> */}
 
-        <AuthBtn outline="true" className="ml-2 mr-2">
+        <AuthBtn outline="true" className="ml-2 mr-2 hidden sm:block">
           Login
         </AuthBtn>
-        <AuthBtn className="mr-2">Sign Up</AuthBtn>
+        <AuthBtn className="mr-2 hidden sm:block">Sign Up</AuthBtn>
 
         <UserAvatar />
       </div>
