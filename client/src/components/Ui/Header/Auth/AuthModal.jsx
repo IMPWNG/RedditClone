@@ -4,12 +4,16 @@ import axios from "axios";
 import AuthInput from "./AuthInput";
 import AuthBtn from "./AuthBtn";
 
+import { useAuth } from '../../../../api/SupabaseProvider';
+
 
 export default function AuthModal() {
   const [modalType, setModalType] = useState("login");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { user, signUp, signIn } = useAuth();
+
 
   const register = (e) => {
     e.preventDefault();
