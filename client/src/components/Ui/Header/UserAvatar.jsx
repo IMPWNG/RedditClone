@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { UserIcon, ChevronDownIcon, LoginIcon } from "@heroicons/react/solid";
 import ClickOutHandler from "react-clickout-handler";
 
-import UserImage from "../../../assets/userAvatar/defaultUser.png";
+// import UserImage from "../../../assets/userAvatar/defaultUser.png";
 
 export default function UserAvatar() {
   const [userDropdownVisibilityClass, setUserDropdownVisibilityClass] = useState('hidden');

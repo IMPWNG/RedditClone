@@ -4,9 +4,9 @@ import Logo from "../assets/logo/logo.png";
 
 import {
   Search,
-  Notifications,
-  Chat,
-  Additionnal,
+  // Notifications,
+  // Chat,
+  // Additionnal,
   UserAvatar,
   AuthBtn,
 } from "./Ui";

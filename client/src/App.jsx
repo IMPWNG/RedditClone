@@ -1,10 +1,11 @@
 import { Header, Content } from "./components";
+import { SupabaseProvider } from "./context/Auth";
 
 export default function App() {
   return (
-    <>
-        <Header />
-        <Content />
-    </>
+    <SupabaseProvider>
+      <Header />
+      <Content />
+    </SupabaseProvider>
   );
 }

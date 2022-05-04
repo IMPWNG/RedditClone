@@ -1,28 +1,22 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../supabaseConfig";
 
-const SupabaseAPI = createContext();
+const AuthContext = createContext();
 
-const client = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_ANON_KEY
-);
-
-
-function SupabaseProvider({ children }) {
+export const SupabaseProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // get session data if there is an active session
-    const session = SupabaseProvider.auth.session();
+    const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
     setLoading(false);
 
     // listen for changes to auth
-    const { data: listener } = SupabaseProvider.auth.onAuthStateChange(
+    const { data: listener } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
         setLoading(false);
@@ -37,24 +31,20 @@ function SupabaseProvider({ children }) {
 
   // create signUp, signIn, signOut functions
   const value = {
-    signUp: (data) => SupabaseProvider.auth.signUp(data),
-    signIn: (data) => SupabaseProvider.auth.signIn(data),
-    signOut: () => SupabaseProvider.auth.signOut(),
+    signUp: (data) => supabase.auth.signUp(data),
+    signIn: (data) => supabase.auth.signIn(data),
+    signOut: () => supabase.auth.signOut(),
     user,
   };
 
   return (
-    <SupabaseAPI.Provider value={[client, value]}>
+    <AuthContext.Provider value={value}>
       {!loading && children}
-    </SupabaseAPI.Provider>
+    </AuthContext.Provider>
   );
-  
-
 };
-
-export default SupabaseProvider.reducer;
 
 // export the useAuth hook
 export const useAuth = () => {
-  return useContext(SupabaseProvider);
+  return useContext(AuthContext);
 };
