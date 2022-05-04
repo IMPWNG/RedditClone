@@ -1,6 +1,6 @@
-export { default as AuthBtn } from "./Auth/AuthBtn";
-export { default as AuthModal } from "./Auth/AuthModal";
-export { default as AuthInput } from "./Auth/AuthInput";
+export { default as AuthBtn } from "./Auth/Btn";
+export { default as AuthForm } from "./Auth/Form";
+export { default as AuthModal } from "./Auth/Modal";
 
 export { default as Search } from "./Header/Search";
 export { default as Notifications } from "./Header/Notifications";

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Logo from "../assets/logo/logo.png";
+import Modal from "./Ui/Auth/Modal";
 
 import {
   Search,
@@ -12,6 +13,16 @@ import {
 } from "./Ui";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <header className="w-full bg-reddit_dark p-2">
       <div className="mx-4 flex relative">
@@ -21,11 +32,17 @@ export default function Header() {
         <Chat />
         <Additionnal /> */}
 
-        <AuthBtn outline="true" className="ml-2 mr-2 hidden sm:block">
+        <AuthBtn
+          onClick={handleOpen}
+          outline="true"
+          className="ml-2 mr-2 hidden sm:block"
+        >
           Login
         </AuthBtn>
-        <AuthBtn className="mr-2 hidden sm:block">Sign Up</AuthBtn>
-
+        <AuthBtn onClick={handleOpen} className="mr-2 hidden sm:block">
+          Sign Up
+        </AuthBtn>
+        <Modal open={open} handleClose={handleClose} />
         <UserAvatar />
       </div>
     </header>
