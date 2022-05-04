@@ -1,1 +1,5 @@
 # RedditClone
+
+## TODO 
+
+- AuthState
