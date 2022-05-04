@@ -5,8 +5,6 @@ import { TextField } from "@material-ui/core";
 
 import { XIcon } from "@heroicons/react/solid";
 
-import AuthBtn from "./Btn";
-
 import { useAuth } from "../../../context/Auth";
 
 export default function AuthForm({ handleClose }) {
@@ -47,6 +45,7 @@ export default function AuthForm({ handleClose }) {
     setAuthError(null);
     modalType === "signup" ? setModalType("login") : setModalType("signup");
   };
+
 
   return (
     <>
@@ -130,7 +129,10 @@ export default function AuthForm({ handleClose }) {
               },
             }}
           />
-          <button className="w-full py-2 mb-3" onClick={onChange}>
+          <button
+            className="w-full py-2 mb-3"
+            type="submit"
+          >
             {modalType === "signup" ? "Sign Up" : "Log In"}
           </button>
           {modalType === "signup"
